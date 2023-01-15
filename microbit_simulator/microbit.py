@@ -14,6 +14,9 @@ class Display:
         self.leds[(y * DIM) + x] = b
         self.draw()
 
+    def get_pixel(self, x, y):
+        return self.leds[(y * DIM) + x]
+
     def show(self, img):
         self.draw()
 

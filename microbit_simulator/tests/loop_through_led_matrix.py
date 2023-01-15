@@ -7,8 +7,7 @@ while True:
     for y in range(5):
         for x in range(5):
             display.set_pixel(x, y, 9)
-            sleep(speed)
-            
+            sleep(speed)            
             
             speed -= 10
 
