@@ -1,7 +1,9 @@
-
+from sys import argv
+from importlib import import_module
 
 if __name__ == "__main__":
+    
 
-    from microbit_simulator.tests import scroll_tests
+    import_module(argv[1])
 
 	

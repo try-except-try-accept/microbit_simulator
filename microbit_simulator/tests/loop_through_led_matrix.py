@@ -1,4 +1,4 @@
-from microbit import *
+from ..microbit import *
 
 
 speed = 1000
