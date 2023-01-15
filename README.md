@@ -80,7 +80,12 @@ For reference: this can be achieved purely in the standard library, using the AN
 
 ---
 
-- A sort of VM hardware-like emulation approach to mock accelerometer, thermometer etc. input?
+This is by no means complete, I have only focused on the few functions that are used in my Year 8 scheme of work.
+
+Future plans:
+
 - Re-implementation of the micro:bit's `music` library using `winsound`?
+- A sort of VM hardware-like emulation approach to mock accelerometer, thermometer etc. input?
+
 
 ---
