@@ -55,21 +55,22 @@ This led me down the path of creating a BBC micro:bit simulator that will run in
 
 For reference: this can be achieved purely in the standard library, using the ANSI code format: `"\033[38;2;255;255;0m"` (in this case, YELLOW)
 
-![display.scroll.gif](readme_demos/display.scroll.gif)
-
 ---
+
+![display.scroll.gif](readme_demos/display.scroll.gif)
 
 - `display.scroll()` to scroll text
 
-![button_tests.gif](readme_demos/button_tests.gif)
-
 ---
+
+![button_tests.gif](readme_demos/button_tests.gif)
 
 - `button_a.was_pressed()` support - this works well, but `is_pressed()` needs some bugfixes.
 
-![snake.gif](readme_demos/snake.gif)
 
 ---
+
+![snake.gif](readme_demos/snake.gif)
 
 - put this all together, and it manages to run my micro:bit Snake code from 2016!
 
