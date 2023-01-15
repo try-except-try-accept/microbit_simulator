@@ -28,29 +28,29 @@ This led me down the path of creating a BBC micro:bit simulator that will run in
 
 ## Implemented so far
 
-![display.show.gif](demos/display.show.gif)
+![display.show.gif](readme_demos/display.show.gif)
 
 - `display.show()` can be used to display single ASCII characters
 
-![display.set_pixel.gif](demos/display.set_pixel.gif)
+![display.set_pixel.gif](readme_demos/display.set_pixel.gif)
 
 - `display.set_pixel()` can turn individual LEDs on
 
-![random_brightness.gif](demos/random_brightness.gif)
+![random_brightness.gif](readme_demos/random_brightness.gif)
 
 - the discovery that 8-bit colour can be used in Windows CMD was a revelation, meaning it was very easy to implement the 10 different brightnesses.
 
 For reference: this can be achieved purely in the standard library, using the ANSI code format: `"\033[38;2;255;255;0m"` (in this case, YELLOW)
 
-![display.scroll.gif](demos/display.scroll.gif)
+![display.scroll.gif](readme_demos/display.scroll.gif)
 
 - `display.scroll()` to scroll text
 
-![button_tests.gif](demos/button_tests.gif)
+![button_tests.gif](readme_demos/button_tests.gif)
 
 - `button_a.was_pressed()` support - this works well, but `is_pressed()` needs some bugfixes.
 
-![snake.gif](demos/snake.gif)
+![snake.gif](readme_demos/snake.gif)
 
 - put this all together, and it manages to run my micro:bit Snake code from 2016!
 
