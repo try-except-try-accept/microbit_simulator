@@ -6,7 +6,9 @@ from random import randint
 
 i = 32
 
-while True:
+while i < 127:
     display.show(chr(i))
-    sleep(500)
+    sleep(400)
     i += 1
+    display.clear()
+    sleep(100)

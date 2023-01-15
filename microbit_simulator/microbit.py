@@ -27,9 +27,9 @@ for char in ALL_CHARS:
 class Button:
     def __init__(self):
         self.pressed = False
-        self.last_checked = None
+        self.last_checked = datetime.now()
         self.tot_presses = 0
-        self.last_pressed = None
+        self.last_pressed = datetime.now()
         
 
     def press(self):
@@ -45,7 +45,7 @@ class Button:
             return False
         
         was_pressed = False
-        if self.last_checked is None and self.pressed or self.last_pressed > self.last_checked:            
+        if self.last_pressed > self.last_checked:            
             was_pressed = True
 
         self.last_checked = datetime.now()
@@ -82,6 +82,7 @@ class Display:
             self.draw()
             sleep(delay)
             [self.leds[i].pop(0) for i in range(5)]
+        self.clear()
         
 
 
@@ -91,12 +92,16 @@ class Display:
         button_b.pressed = False
 
     def draw(self):       
-        # brightness map for each pixel
+        
         system("cls")
         out = ""
         for row in self.leds:
-            for led in row[:5]:
+            for i in range(DIM):
+                led = 0
+                if i < len(row):
+                    led = row[i]                
                 out += COLOURS[led] + " ██ "
+                    
             out += "\n\n"
         print(out)
 
