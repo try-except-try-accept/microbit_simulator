@@ -6,6 +6,7 @@ import atexit
 from config import *
 
 last_button = ""
+system("cls")
 
 ###################################################
 
