@@ -7,6 +7,20 @@ from config import *
 
 ###################################################
 
+class Image:
+
+    HEART = '''01010
+11111
+11111
+01110
+00100'''
+    PACMAN = '''01111
+11010
+11100
+11110
+01111'''
+    
+
 class Button:
     """Re-implementation of the BBC micro:bit MicroPython Button class, interfacing with pynput"""
     def __init__(self):
@@ -56,7 +70,8 @@ class Display:
 
     def show(self, img):
         self.clear()
-        img = char_to_led(img)
+        if set(img) != {'1', '0'}:
+            img = char_to_led(img)
         self.leds = img
         self.draw()
         
