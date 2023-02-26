@@ -140,6 +140,8 @@ class Display:
         self.clear()
         if len(img) == 1:
             img = char_to_led(img)
+        if type(img) == str:
+            img = [list(map(int, row)) for row in img.splitlines()]
         self.leds = img
         self.draw()
         
