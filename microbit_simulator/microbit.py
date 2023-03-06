@@ -7,6 +7,7 @@ from config import *
 
 last_button = ""
 system("cls")
+SHOW_MULTI_CHAR_PAUSE = 800
 
 ###################################################
 
@@ -140,13 +141,17 @@ class Display:
         return self.leds[y][x]
 
     def show(self, img):
-        self.clear()
-        if len(img) == 1:
-            img = char_to_led(img)
-        if type(img) == str:
-            img = [list(map(int, row)) for row in img.splitlines()]
-        self.leds = img
-        self.draw()
+
+        if type(img) == str and len(img) < 10:
+            for character in img:
+                self.leds = char_to_led(character)
+                self.draw()
+                sleep(SHOW_MULTI_CHAR_PAUSE)
+        else:                
+            if type(img) == str:
+                img = [list(map(int, row)) for row in img.splitlines()]
+            self.leds = img
+            self.draw()
         
     def scroll(self, string, delay=150, wait=True, loop=False, monospace=False): # TO DO - handle kwargs.
         self.leds = string_to_leds(string)
@@ -169,7 +174,7 @@ class Display:
     def draw(self):
 
         if self.hash(self.leds) != self.last_image:
-        
+            
             system("cls")
             out = ""
             for row in self.leds:
