@@ -92,6 +92,7 @@ class Button:
         self.tot_presses = 0
         self.last_pressed = datetime.now()
         
+        
 
     def press(self):
         global last_button
@@ -125,9 +126,11 @@ class Button:
 class Display:
     """Re-implementation of the BBC micro:bit MicroPython Display class for pixel emulation on the Windows terminal"""
     def __init__(self):
-        self.clear()
         self.last_image = None
+        self.clear()
+        
         self.last_out = ""
+        
         
     def set_pixel(self, x, y, b):        
         self.leds[y][x] = b
@@ -158,6 +161,7 @@ class Display:
         self.leds = [[0 for i in range(DIM)] for j in range(DIM)]
         button_a.pressed = False
         button_b.pressed = False
+        self.draw()
 
     def hash(self, img):
         return "".join("".join(str(b) for b in row) for row in img) + last_button
@@ -218,7 +222,7 @@ def string_to_leds(string):
     return leds
 
 def sleep(ms):
-    wait(ms / 1000) # convert ms to seconds
+    wait((ms / 1000)/2) # convert ms to seconds and adjust for lag
 
 def reset_console():
     print(WHITE)
